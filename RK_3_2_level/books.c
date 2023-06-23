@@ -24,7 +24,7 @@ Book *create_book(char *isbn, char *authors, char *title, int total, int availab
     // функция добавления новой книги в хеш таблицу
 void add_book(HashTable *table, Book *book) {
     int index = hashBook(book->isbn);
-    while (table->books[index] != NULL) {   // по принципу связного списка
+    while (table->books[index] != NULL) {   
         index = (index + 1) % TABLE_SIZE;
     }
     table->books[index] = book;
